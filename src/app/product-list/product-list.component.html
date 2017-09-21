@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Product List</h1>
+    <div class="product" *ngFor="let product of products, let i = index">
+      <h3>{{product.title}}</h3>
+      <h3>{{product.price}}</h3>
+      <button (click)= "delete(i)">Delete</button>
+      <button (click)= "edit(i)">Edit</button>
+    </div>
+  </div>

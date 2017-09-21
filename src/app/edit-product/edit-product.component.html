@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Edit Product</h1>
+  <form (submit) = "update()" #formData = "ngForm">
+      <p>
+          Title:
+          <input type="text"
+          name="title"
+          required
+          minlength="4"
+          [(ngModel)] = "product.title"
+          #title = "ngModel"
+          /><br>
+        </p>
+        <p>
+          Price:
+          <input type="number"
+          name="price"
+          required
+          [(ngModel)] = "product.price"
+          #price = "ngModel"
+          /><br>
+        </p>
+        <p>
+          Img Url(Optional):
+          <input type="text"
+          name="imgUrl"
+          [(ngModel)] = "product.imgUrl"
+          #imgUrl = "ngModel"
+          /><br>
+        </p>
+      <input type="submit" [disabled]="!formData.valid" value="Edit Product"/>
+    </form>
+</div>

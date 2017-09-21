@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Create a New Product</h1>
+  <form (submit) = "onSubmit()" #formData = "ngForm">
+    <p>
+      Title:
+      <input type="text"
+      name="title"
+      required
+      minlength="4"
+      [(ngModel)] = "product.title"
+      #title = "ngModel"
+      /><br>
+    </p>
+    <p>
+      Price:
+      <input type="number"
+      name="price"
+      required
+      [(ngModel)] = "product.price"
+      #title = "ngModel"
+      /><br>
+    </p>
+    <p>
+      Img Url(Optional):
+      <input type="text"
+      name="imgUrl"
+      [(ngModel)] = "product.imgUrl"
+      #imgUrl = "ngModel"
+      /><br>
+    </p>
+    <input type="submit" [disabled]="!formData.valid" value="Add a Product"/>
+  </form>
+</div>
